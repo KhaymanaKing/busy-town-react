@@ -15,6 +15,23 @@ function App() {
   // traffic is complicated. It should be an array of strings that starts out as ['car', 'truck']
   const [vehicle, setVehicle] = useState(['car', 'truck']);
 
+  function handleCar(){
+    vehicle.push('car');
+    setVehicle([...vehicle]);
+  } 
+  function handleBus(){
+    vehicle.push('bus');
+    setVehicle([...vehicle]);
+  } 
+  function handleTruck(){
+    vehicle.push('truck');
+    setVehicle([...vehicle]);
+  } 
+  function handleMotorcycle(){
+    vehicle.push('motorcycle');
+    setVehicle([...vehicle]);
+  } 
+  
   return (
     <div className="App">
       <div className="fight">
@@ -59,13 +76,13 @@ function App() {
       <div className='buttons'>
         {/* This part is weird */}
         {/* On click, you should set the traffic in state to be a copy of the same array that's already in state, but immutably add a 'car' to the end */}
-        <button onClick={() => setVehicle(vehicle.push(vehicle))}>Car</button>
+        <button onClick={handleCar}>Car</button>
         {/* On click, you should set the traffic in state to be a copy of the same array that's already in state, but immutably add a 'bus' to the end */}
-        <button>Bus</button>
+        <button onClick={handleBus}>Bus</button>
         {/* On click, you should set the traffic in state to be a copy of the same array that's already in state, but immutably add a 'truck' to the end */}
-        <button>Truck</button>
+        <button onClick={handleTruck}>Truck</button>
         {/* On click, you should set the traffic in state to be a copy of the same array that's already in state, but immutably add a 'motorcycle' to the end */}
-        <button>Motorcycle</button>
+        <button onClick={handleMotorcycle}>Motorcycle</button>
       </div>
 
     </div>
