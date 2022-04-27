@@ -2,6 +2,7 @@ import './App.css';
 import VehicleList from './VehicleList';
 import TrafficLight from './TrafficLight';
 import { useState } from 'react';
+import Vehicle from './Vehicle';
 function App() {
   // track the following state with a few useState hooks:
   // lightColor should be a string that starts out as 'red'
@@ -12,6 +13,7 @@ function App() {
   const [alienSize, setAlienSize] = useState(10);
   const SIZE_MODIFIER = 1;
   // traffic is complicated. It should be an array of strings that starts out as ['car', 'truck']
+  const [vehicle, setVehicle] = useState(['car', 'truck']);
 
   return (
     <div className="App">
@@ -51,11 +53,13 @@ function App() {
       This prop should be an array of strings like ['car', 'truck', 'truck', 'car', 'bus'].
       Do you have something like that in state that you could pass as a vehicles prop? 
       */}
-      <VehicleList />
+      <VehicleList vehicles ={vehicle}/>
+      
+  
       <div className='buttons'>
         {/* This part is weird */}
         {/* On click, you should set the traffic in state to be a copy of the same array that's already in state, but immutably add a 'car' to the end */}
-        <button>Car</button>
+        <button onClick={() => setVehicle(vehicle.push(vehicle))}>Car</button>
         {/* On click, you should set the traffic in state to be a copy of the same array that's already in state, but immutably add a 'bus' to the end */}
         <button>Bus</button>
         {/* On click, you should set the traffic in state to be a copy of the same array that's already in state, but immutably add a 'truck' to the end */}
