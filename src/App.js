@@ -2,7 +2,6 @@ import './App.css';
 import VehicleList from './VehicleList';
 import TrafficLight from './TrafficLight';
 import { useState } from 'react';
-import Vehicle from './Vehicle';
 function App() {
   // track the following state with a few useState hooks:
   // lightColor should be a string that starts out as 'red'
@@ -31,6 +30,7 @@ function App() {
     vehicle.push('motorcycle');
     setVehicle([...vehicle]);
   } 
+
   
   return (
     <div className="App">
